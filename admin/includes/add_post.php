@@ -1,8 +1,8 @@
 <?php 
     if(isset($_POST['create_post'])) {
         
-        $post_title = $_POST['title'];
-        $post_author = $_POST['author'];
+        $post_title = mysqli_real_escape_string($connection, $_POST['title']);
+        $post_author = mysqli_real_escape_string($connection, $_POST['author']);
         $post_category_id = $_POST['post_category_id'];
         $post_status = $_POST['post_status'];
         
@@ -11,7 +11,7 @@
         $post_image_temp = $_FILES['image']['tmp_name'];
         
         $post_tags = $_POST['post_tags'];
-        $post_content = $_POST['post_content'];
+        $post_content = mysqli_real_escape_string($connection, $_POST['post_content']);
         $post_date = date('d-m-y');
         $post_comment_count = 4;
         
