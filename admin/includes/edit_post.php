@@ -70,7 +70,7 @@ if(isset($_POST['update_post'])) {
 
     <div class="form-group">
         <label for="post_category_id">Post Category ID</label>
-        
+        <br />
         <select name="post_category_id" id="">
             <?php 
                $query = "SELECT * FROM categories";
