@@ -25,6 +25,11 @@
                         $post_date = $row["post_date"];
                         $post_image = $row["post_image"];
                         $post_content = substr($row["post_content"], 0, 230);
+                        $post_status = $row["post_status"];
+                        
+                        if($post_status !== 'published') {
+                            echo "<h1>No post here!</h1>";
+                        } else {
                         
                 ?>
                 <h1 class="page-header">
@@ -47,7 +52,7 @@
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
                 <hr>
-                   <?php } ?>
+                   <?php } } ?>
                 
                 <!-- Pager -->
                 <ul class="pager">
@@ -75,9 +80,7 @@
                 <div class="col-lg-12">
                     <p>Copyright &copy; Your Website 2014</p>
                 </div>
-                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
         </footer>
 
     </div>

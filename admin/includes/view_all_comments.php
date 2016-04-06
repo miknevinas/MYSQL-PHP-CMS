@@ -61,9 +61,9 @@
         
         echo "<td>{$comment_date}</td>";
   
-        echo "<td><a href='posts.php?source=edit_post&p_id='>Approve</a></td>";
-        echo "<td><a href='posts.php?delete='>Reject</a></td>";
-        echo "<td><a href='posts.php?delete='>Delete</a></td>";
+        echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>";
+        echo "<td><a href='comments.php?reject=$comment_id'>Reject</a></td>";
+        echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";
         echo "</tr>";
     }
     ?>
@@ -72,16 +72,44 @@
 
 
 <?php
-////////Delete posts//////////
-if(isset($_GET['delete'])) {
-    $delete_post_id = $_GET['delete'];
+/////////Approve comments///////
+if(isset($_GET['approve'])) {
+    $approve_comment_id = $_GET['approve'];
 
-    $query = "DELETE FROM posts WHERE post_id = '{$delete_post_id}' ";
-    $delete_item = mysqli_query($connection, $query);
-    header("Location: posts.php");
+    $query = "UPDATE comments SET comment_status = 'Approved' WHERE comment_id = '{$approve_comment_id}'  ";
+    $approve_comment = mysqli_query($connection, $query);
+    header("Location: comments.php");
 
-    if(!$delete_item) {
+    if(!$approve_comment) {
         die("ERROR " . mysqli_error($connection));
     }
 }
+
+/////////Reject comments////////
+if(isset($_GET['reject'])) {
+    $reject_comment_id = $_GET['reject'];
+
+    $query = "UPDATE comments SET comment_status = 'Rejected' WHERE comment_id = '{$reject_comment_id}'";
+    $reject_comment = mysqli_query($connection, $query);
+    header("Location: comments.php");
+
+    if(!$reject_comment) {
+        die("ERROR " . mysqli_error($connection));
+    }
+}
+
+////////Delete comments//////////
+if(isset($_GET['delete'])) {
+    $delete_comment_id = $_GET['delete'];
+
+    $query = "DELETE FROM comments WHERE comment_id = '{$delete_comment_id}' ";
+    $delete_comment = mysqli_query($connection, $query);
+    header("Location: comments.php");
+
+    if(!$delete_comment) {
+        die("ERROR " . mysqli_error($connection));
+    }
+}
+
+
 ?>
