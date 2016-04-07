@@ -25,4 +25,5 @@ if(!isset($_SESSION['user_role'])) {
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/sb-admin.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     </head>
