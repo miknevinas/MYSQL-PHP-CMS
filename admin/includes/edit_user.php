@@ -60,7 +60,7 @@ if(isset($_POST['edit_user'])) {
     </div>
 
     <div class="form-group">
-        <label for="">Role</label>
+        <label for="">Role</label><br />
         <select name="user_role" id="">
             <option value="Subscriber"><?php echo $user_role; ?></option>
            <?php 

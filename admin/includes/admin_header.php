@@ -27,5 +27,6 @@ if(!isset($_SESSION['user_role'])) {
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="js/scripts.js"></script>
     </head>
