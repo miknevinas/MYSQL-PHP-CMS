@@ -109,7 +109,7 @@ if(isset($_POST['checkBoxArray'])) {
             //& divides parameters
             echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>Edit</a></td>";
             //pass in "delete", delete get caught by super global below
-            echo "<td><a href='posts.php?delete={$post_id}'>Delete</a></td>";
+            echo "<td><a onClick=\"javascript: return confirm('Are you sure you want to delete?'); \" href='posts.php?delete={$post_id}'>Delete</a></td>";
             echo "</tr>";
         }
         ?>
