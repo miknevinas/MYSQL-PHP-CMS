@@ -62,6 +62,8 @@
                     $comment_email = $_POST['comment_email'];
                     $comment_content = $_POST['comment_content'];
                     
+                    if(!empty($comment_author) && !empty($comment_email) && !empty($comment_content)) {
+                    
                     $query = "INSERT INTO comments (comment_Post_id, comment_author, comment_email, comment_content, comment_status, comment_date) ";
                     
                     $query .= "VALUES ('$the_post_id' , '$comment_author', '$comment_email', '$comment_content', 'unnaproved', now())";
@@ -75,6 +77,9 @@
                     $update_comment_count = mysqli_query($connection, $query);
                     if(!$update_comment_count) {
                         die("QUERY FAILED " . mysqli_error($connection));
+                    }
+                  } else {
+                        echo"<script>alert('Fields cannot be empty.')</script>";
                     }
                 }
                 ?>
@@ -160,7 +165,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Wordsmith/Cdesmith 2016</p>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
