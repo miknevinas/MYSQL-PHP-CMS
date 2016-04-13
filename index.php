@@ -27,15 +27,8 @@
                         $post_content = substr($row["post_content"], 0, 230);
                         $post_status = $row["post_status"];
                         
-                        if($post_status === 'published') {
-                           
-                        
-                        
+                        if($post_status === 'published') {      
                 ?>
-                <h1 class="page-header">
-                    Page Heading
-                    <small>Secondary Text</small>
-                </h1>
 
                 <!-- Blog Posts -->
                 <h2>
@@ -72,7 +65,6 @@
             <?php include "includes/sidebar.php"?>
 
         </div>
-        <!-- /.row -->
 
         <hr>
 
@@ -80,7 +72,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Wordsmith/Codesmith 2016</p>
                 </div>
             </div>
         </footer>
