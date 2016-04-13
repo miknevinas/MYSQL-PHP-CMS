@@ -84,6 +84,9 @@ if(isset($_GET['change_to_subscriber'])) {
 
 ////////Delete userss//////////
 if(isset($_GET['delete'])) {
+    if(isset($_SESSION['user_role'])) {
+        if($_SESSION['user_role'] === 'Admin') {
+    
     $delete_user_id = $_GET['delete'];
 
     $query = "DELETE FROM users WHERE user_id = '{$delete_user_id}' ";
@@ -92,5 +95,7 @@ if(isset($_GET['delete'])) {
 
     if(!$delete_user) {
         die("ERROR " . mysqli_error($connection));
+            }
+        }
     }
 }
