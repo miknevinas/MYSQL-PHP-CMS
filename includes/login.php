@@ -1,6 +1,8 @@
+<?php ob_start(); ?>
+<?php session_start(); ?>
 <?php include "db.php"; ?>
 
-<?php session_start(); ?>
+
 
 <?php 
 if(isset($_POST['login'])) {
