@@ -26,9 +26,11 @@
 //                    echo "<li><a href='#'>{$cat_title}</a></li>";
 //                }
                 ?>
+<!--
                 <li>
                     <a href="admin">Admin</a>
                 </li>
+-->
                 <?php 
                 if(isset($_SESSION['user_role'])) {
                     if(isset($_GET['p_id'])) {
