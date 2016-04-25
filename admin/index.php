@@ -172,7 +172,6 @@
                             };
 
                             var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
                             chart.draw(data, options);
                         }
                     </script>
