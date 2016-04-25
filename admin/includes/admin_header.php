@@ -21,7 +21,7 @@ if(!isset($_SESSION['user_role'])) {
         <title>Admin</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link href="css/sb-admin.css" rel="stylesheet">
         <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
